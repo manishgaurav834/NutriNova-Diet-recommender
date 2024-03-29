@@ -34,11 +34,31 @@ const AuthState = (props) => {
 
     }
 
+    const signin= async (name,email,password)=>{
+     
+        const url ="http://localhost:5000/api/auth/createuser"
+        const response = await fetch(url, {
+          method: "POST", 
+          headers: {
+            "Content-Type": "application/json",
+            
+            
+          },
+          
+          body:JSON.stringify({name,email,password})
+        })
+
+        const json=await response.json()
+        setToken(json.authtoken)
+        
+
+    }
+
     
 
 
     return (
-        <AuthContext.Provider value={{token,setToken,success,login}}>
+        <AuthContext.Provider value={{token,setToken,success,login,signin}}>
             {props.children}
         </AuthContext.Provider>
         
