@@ -6,6 +6,7 @@ const AuthState = (props) => {
     const [token,setToken]=useState("")
 
     const [success,setsuccess]=useState(false)
+    const [tap,settap]=useState(false)
 
     const login = async (email,password)=>{
         const url ="http://localhost:5000/api/auth/login"
@@ -26,6 +27,8 @@ const AuthState = (props) => {
         
         setToken(json.authtoken)
         setsuccess(json.success)
+        settap(true)
+        
         
         
         
@@ -50,15 +53,23 @@ const AuthState = (props) => {
 
         const json=await response.json()
         setToken(json.authtoken)
+        setsuccess(json.success)
+        settap(true)
         
 
+    }
+
+    const logout=()=>{
+      setsuccess(false)
+      setToken("")
+      settap(false)
     }
 
     
 
 
     return (
-        <AuthContext.Provider value={{token,setToken,success,login,signin}}>
+        <AuthContext.Provider value={{token,setToken,success,login,signin,logout,tap,settap}}>
             {props.children}
         </AuthContext.Provider>
         

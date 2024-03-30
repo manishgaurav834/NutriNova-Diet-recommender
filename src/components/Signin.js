@@ -6,7 +6,7 @@ import Nav from './Nav';
 
 const Signin = () => {
     const context= useContext(AuthContext)
-    const{signin,success} = context
+    const{signin,success,tap,settap} = context
     const [cred,setCred]= useState({name:"",email:"",password:""})
     const navigate=useNavigate();
 
@@ -28,18 +28,37 @@ const Signin = () => {
             navigate('/')
         }
 
-    })
+    },[success])
+
+    useEffect(()=>{
+   
+    
+      
+      if(tap){
+      setTimeout(() => {
+        
+          settap(false)
+    
+        
+      },3000);
+    }
+  
+  
+    },[tap])
+
+    
 
   return (
     <>
     
-    <div className="top-0 flex  items-center justify-center absolute w-full  bg-bgd h-screen">
+    <div className="top-0 bg-bg1 bg-cover sm:bg-center  absolute  w-full  h-screen   px-3 flex  justify-center">
     <Nav/>
     
     <div className="flex   flex-col items-center w-full p-4">
+        <div className={`fixed top-16 w-full bg-red-700/70 h-10 flex items-center ${(!success && tap)?"block":"hidden"} text-xl p-2 `}>Alert : E-mail already used.</div>
         
         
-        <div className="container mx-auto p-4 flex flex-col w-4/5 sm:w-2/5 items-center  text-white  rounded-lg backdrop-blur-sm  bg-black/30   ">
+        <div className="container mx-auto p-4 flex flex-col w-4/5 sm:w-2/5 items-center  text-white  rounded-lg backdrop-blur-sm bg-black/80 sm:bg-black/30 absolute sm:right-20  top-32   ">
        
         <form onSubmit={handleSubmit} className={`w-full my-1 `}>
         <label className="font-bold text-lg sm:text-xl my-1" htmlFor="name">Name</label><br/>

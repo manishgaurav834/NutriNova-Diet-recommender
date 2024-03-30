@@ -5,23 +5,57 @@ import Nav from './Nav'
 
 const Login = () => {
   const context = useContext(authContext)
-  const {login,token}=context
+  const {login,success,tap,settap}=context
   const Navigate =useNavigate()
   const [cred,setCred]=useState({email:"",password:""})
+  const [val,setVal]=useState("none")
+ 
+  
 
   const handleSubmit=(e)=>{
     e.preventDefault()
     login(cred.email,cred.password)
+    
+    
 
   }
 
   useEffect(()=>{
-    if(token!==""){
+    if(success){
       Navigate('/')
     }
+    
+      
+   
+    setTimeout(() => {
+      if(val!=="bounce"){
+      setVal("bounce")
+      }
+      else{
+        setVal("none")
+      }
+
+      
+    },10000);
 
 
-  })
+  },[success,val])
+
+  useEffect(()=>{
+   
+    
+      
+    if(tap){
+    setTimeout(() => {
+      
+        settap(false)
+  
+      
+    },3000);
+  }
+
+
+  },[tap])
 
   const onChange=(e)=>{
     e.preventDefault()
@@ -30,13 +64,15 @@ const Login = () => {
   }
   return (
     <>
-      <div className=" top-0 bg-bgp sm:bg-bgd  bg-cover bg-center  absolute  w-full  h-screen   px-3 flex  justify-center">
+      <div className=" top-0 bg-bgd  bg-cover bg-left-bottom sm:bg-center  absolute  w-full  h-screen   px-3 flex  justify-center">
       <Nav/>
       
       <div className="flex   flex-col items-center w-full p-4">
+        <div className={`fixed top-16 w-full bg-red-700/70 h-10 flex items-center ${(!success && tap)?"block":"hidden"} text-xl p-2 `}>Alert : Invalid Login Credentials</div>
         
         
-        <div className="container mx-auto p-4 flex flex-col w-4/5 sm:w-2/5 items-center  text-white  rounded-lg backdrop-blur-sm  bg-black/30 absolute sm:right-40 sm:top-36 top-20  ">
+        
+        <div className="container mx-auto p-4 flex flex-col w-4/5 sm:w-2/5 items-center  text-white  rounded-lg backdrop-blur-sm bg-black/80 sm:bg-black/30 absolute sm:right-40 sm:top-36 top-40  ">
        
         <form onSubmit={handleSubmit} className={`w-full my-1 `}>
           <label className="font-bold text-lg sm:text-xl my-1" htmlFor="email">E-mail</label><br/>
@@ -45,7 +81,7 @@ const Login = () => {
           <input type="text" id="password" name="password" className=" bg-black/20 p-2 h-10 rounded-xl w-full border-2 border-white my-4 " onChange={onChange} value={cred.password}  required minLength={5} /><br/>
           <div className='flex '>
          <div className="flex w-full justify-center">
-         <input type="submit" value="Login" className="bg-green-600 hover:opacity-95 hover:animate-bounce text-white text-sm md:text-xl lg:text-2xl font-bold rounded-xl w-full sm:w-2/5 border-2 border-white   h-12 my-4 cursor-pointer"></input>
+         <input type="submit" value="Login" className={`bg-green-600 hover:opacity-95 animate-${val} text-white text-sm md:text-xl lg:text-2xl font-bold rounded-xl w-full sm:w-2/5 border-2 border-white   h-12 my-4 cursor-pointer`}></input>
          </div>
           </div>
         
