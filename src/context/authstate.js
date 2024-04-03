@@ -7,6 +7,7 @@ const AuthState = (props) => {
 
     const [success,setsuccess]=useState(false)
     const [tap,settap]=useState(false)
+    const [name,setName]=useState("")
 
     const login = async (email,password)=>{
         const url ="http://localhost:5000/api/auth/login"
@@ -65,11 +66,32 @@ const AuthState = (props) => {
       settap(false)
     }
 
+    const getuser= async ()=>{
+      const url ="http://localhost:5000/api/auth/getuser"
+    
+      const response = await fetch(url, {
+        method: "POST", 
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token" :token
+          
+          
+        },
+        
+        
+      })
+
+      const json=await response.json()
+      
+      setName(json.name)
+      
+    }
+
     
 
 
     return (
-        <AuthContext.Provider value={{token,setToken,success,login,signin,logout,tap,settap}}>
+        <AuthContext.Provider value={{token,setToken,success,login,signin,logout,tap,settap,name,getuser}}>
             {props.children}
         </AuthContext.Provider>
         

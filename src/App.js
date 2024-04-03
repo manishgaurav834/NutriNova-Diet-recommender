@@ -5,6 +5,8 @@ import Home from './components/Home';
 import AuthState from './context/authstate';
 import Login from './components/Login';
 import Signin from './components/Signin';
+import FoodState from './context/foodstate';
+import DbState from './context/dbstate';
 
 
 
@@ -17,7 +19,11 @@ function App() {
   return (
    <>
    <AuthState>
+   <DbState>
+   <FoodState>
    <RouterProvider router={router}/>
+   </FoodState>
+   </DbState>
    </AuthState>
    
    </>
