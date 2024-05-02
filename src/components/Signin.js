@@ -58,7 +58,7 @@ const Signin = () => {
         <div className={`fixed top-16 w-full bg-red-700/70 h-10 flex items-center ${(!success && tap)?"block":"hidden"} text-xl p-2 `}>Alert : E-mail already used.</div>
         
         
-        <div className="container mx-auto p-4 flex flex-col w-4/5 sm:w-2/5 items-center  text-white  rounded-lg backdrop-blur-sm bg-black/80 sm:bg-black/30 absolute sm:right-20  top-32   ">
+        <div className="container mx-auto p-4 flex flex-col w-4/5 sm:w-2/5 items-center  text-white  rounded-lg backdrop-blur-sm bg-black/90 sm:bg-black/80 absolute sm:right-20  top-32   ">
        
         <form onSubmit={handleSubmit} className={`w-full my-1 `}>
         <label className="font-bold text-lg sm:text-xl my-1" htmlFor="name">Name</label><br/>

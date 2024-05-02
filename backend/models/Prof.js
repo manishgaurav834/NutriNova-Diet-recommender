@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const Food = new Schema({
+const Prof = new Schema({
 
     user:{
         type: mongoose.Schema.Types.ObjectId,
@@ -10,36 +10,35 @@ const Food = new Schema({
 
     },
 
-    item:{
+    weight:{
+        type:Number,
+        required:true,
+        
+    },
+
+    height:{
+        type:Number,
+        required:true
+    },
+
+    gender:{
         type:String,
         required:true
     },
 
-    calorie:{
-        type:Number,
-        required:true
-    },
-    protein:{
-        type:Number,
-        required:true
-    },
-    carbs:{
+    age:{
         type:Number,
         required:true
     },
 
-    sugar:{
-        type:Number,
-        required:true
-    },
-    fat:{
-        type:Number,
-        required:true
-    },
-
-    img:{
+    goal:{
         type:String,
-        required:true
+        default:"Maintenence"
+    },
+
+    activity:{
+        type:String,
+        default:"Little to No"
     },
     
     date:{
@@ -52,4 +51,4 @@ const Food = new Schema({
  
 });
 
-module.exports=mongoose.model('food',Food);
+module.exports=mongoose.model('prof',Prof);

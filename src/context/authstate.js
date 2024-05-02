@@ -4,6 +4,11 @@ import AuthContext from './authcontext';
 const AuthState = (props) => {
 
     const [token,setToken]=useState("")
+    const [sd,setSD]=useState(false)
+    const [sd2,setSD2]=useState(false)
+    const [sd3,setSD3]=useState(false)
+    const [sd4,setSD4]=useState(false)
+    const [sd5,setSD5]=useState(false)
 
     const [success,setsuccess]=useState(false)
     const [tap,settap]=useState(false)
@@ -55,6 +60,7 @@ const AuthState = (props) => {
         const json=await response.json()
         setToken(json.authtoken)
         setsuccess(json.success)
+        setSD(true)
         settap(true)
         
 
@@ -84,6 +90,7 @@ const AuthState = (props) => {
       const json=await response.json()
       
       setName(json.name)
+     
       
     }
 
@@ -91,7 +98,7 @@ const AuthState = (props) => {
 
 
     return (
-        <AuthContext.Provider value={{token,setToken,success,login,signin,logout,tap,settap,name,getuser}}>
+        <AuthContext.Provider value={{token,setToken,success,login,signin,logout,tap,settap,name,getuser,sd,setSD,sd2,setSD2,sd3,setSD3,sd4,setSD4,sd5,setSD5}}>
             {props.children}
         </AuthContext.Provider>
         

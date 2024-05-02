@@ -27,13 +27,13 @@ router.get('/fetchallfood',fetchuser,async (req,res)=>{
 router.post('/additem',fetchuser,async (req,res)=>{
 
     try {
-        const{item,calorie,img}= req.body;
+        const{item,calorie,protein,carbs,sugar,fat,img}= req.body;
        
        
       
     
         const food = new Food({
-            item , calorie ,img , user : req.user.id
+            item , calorie ,protein,carbs,sugar,fat,img , user : req.user.id
     
     
         })
