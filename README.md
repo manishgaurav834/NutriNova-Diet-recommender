@@ -26,29 +26,29 @@ Nutritional tracking application to help users manage their diet and reach their
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/nutrinova.git
+   git clone https://github.com/sahaniaditya/NutriNova-Diet-recommender.git
    cd nutrinova
 2. Install dependencies for both front-end and back-end:
 # Front-end
-cd client
 npm install
 
 # Back-end
-cd ../server
+cd ../backend<br/>
 npm install
 
 
-3.Set up environment variables:Create a .env file in the server directory with the following:
-MONGO_URI=your-mongodb-connection-string
-JWT_SECRET=your-jwt-secret
+3.Set up environment variables:<br/>
+Create a .env file in the server directory with the following:
+- MONGO_URI = your-mongodb-connection-string
+- JWT_SECRET = your-jwt-secret
+
 4.Start the application:
-# Start the server
-cd server
+# Start the client
 npm start
 
-# Start the client
-cd ../client
-npm start
+# Start the server
+cd ../backend<br/>
+node ./index.js
 
 
 # Usage
@@ -68,4 +68,4 @@ We welcome contributions! To contribute:
 
 
 # Contact
-If you have any questions or suggestions, feel free to open an issue or contact me at your-email@example.com.
+If you have any questions or suggestions, feel free to open an issue or contact me at my profile.
