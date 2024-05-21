@@ -38,18 +38,26 @@ const Searchfood = () => {
 
     }
 
-    useEffect(()=>{
-       if(success){ 
-       fetchfood()
+   
+    
+  useEffect(() => {
+      
+      
+    if(!success){
+      Navigate("/login")
+    }
+    else{
+      fetchfood()
        getdata()
        console.log(food)
-       }
-       else{
-        Navigate('/login')
-       }
+      
+     
+      
 
-
-    },[])
+    }
+    }
+    // eslint-disable-next-line
+  , [success]);
 
   return (
     <>
