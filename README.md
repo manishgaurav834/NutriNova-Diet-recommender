@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# Nutrinova
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Nutritional Tracking Application](nutri-nova.jpg)
 
-## Available Scripts
+Nutritional tracking application to help users manage their diet and reach their fitness goals. Users can input personal information such as weight, height, age, and gender, specify their fitness goals, and track daily food intake. Based on this information, Nutrinova suggests a diet plan tailored to their nutritional needs.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **User Authentication**: Secure user authentication to keep personal information private.
+- **Diet Recommendations**: Personalized diet suggestions based on user input.
+- **Activity Level Tracking**: Adjust recommendations based on user activity levels.
+- **Food Intake Logging**: Log daily meals to track nutritional intake.
+- **Data Visualization**: Charts and graphs to monitor progress over time.
+- **Responsive Design**: Works seamlessly on desktop and mobile devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Front-end**: React, Tailwind CSS
+- **Back-end**: Node.js, Express.js
+- **Database**: MongoDB, Mongoose
+- **Authentication**: Passport.js or JWT
+- **Data Visualization**: Chart.js or D3.js
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+   ```bash
+   git clone https://github.com/sahaniaditya/NutriNova-Diet-recommender.git
+   cd nutrinova
+2. Install dependencies for both front-end and back-end:
+# Front-end
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Back-end
+cd ../backend<br/>
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3.Set up environment variables:<br/>
+Create a .env file in the server directory with the following:
+- MONGO_URI = your-mongodb-connection-string
+- JWT_SECRET = your-jwt-secret
 
-### `npm run eject`
+4.Start the application:
+# Start the client
+npm start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Start the server
+cd ../backend<br/>
+node ./index.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Usage
+- Register or log in to Nutrinova.
+- Enter your personal information and fitness goals.
+- Add your daily food intake to track calories and macros.
+- Get diet recommendations based on your goals and activity levels.
+- Use the visualization tools to monitor your progress.
+  
+# Contributing
+We welcome contributions! To contribute:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Fork the repository.
+- Create a new branch for your feature/bug fix.
+- Make your changes and submit a pull request.
+- Ensure your code follows the style guide and includes relevant tests.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Contact
+If you have any questions or suggestions, feel free to open an issue or contact me at my profile.
