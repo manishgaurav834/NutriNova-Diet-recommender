@@ -1,6 +1,6 @@
 # Nutrinova
 
-(![Nutrinova dietary tracking](<WhatsApp Image 2024-05-02 at 10.34.35_35b933c1.jpg>))
+![Nutrinova dietary tracking](<WhatsApp Image 2024-05-02 at 10.34.35_35b933c1.jpg>)
 
 Nutritional tracking application to help users manage their diet and reach their fitness goals. Users can input personal information such as weight, height, age, and gender, specify their fitness goals, and track daily food intake. Based on this information, Nutrinova suggests a diet plan tailored to their nutritional needs.
 
