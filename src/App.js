@@ -10,6 +10,8 @@ import DbState from './context/dbstate';
 import Profile from './components/Profile';
 import ProfState from './context/profstate'
 import Searchfood from './components/Searchfood';
+import { useEffect } from 'react';
+import Favicon from 'react-favicon';
 
 
 
@@ -21,9 +23,15 @@ function App() {
     {path:"/profile",element:<><Profile/></>},
     {path:"/diet",element:<><Searchfood/></>}
   ])
+
+  useEffect(()=>{
+    document.title="NutriNova";
+  })
+
+  
   return (
    <>
-   
+   <Favicon url="http://oflisback.github.io/react-favicon/img/github.ico"/>
    <AuthState>
    <ProfState>
    <DbState>
