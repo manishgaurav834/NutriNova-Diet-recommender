@@ -12,6 +12,7 @@ import ProfState from './context/profstate'
 import Searchfood from './components/Searchfood';
 import { useEffect } from 'react';
 import Favicon from 'react-favicon';
+import Chatbot from "./components/Chatbot"
 
 
 
@@ -21,7 +22,8 @@ function App() {
     {path:"/login",element:<><Login/></>},
     {path:"/signup",element:<><Signin/></>},
     {path:"/profile",element:<><Profile/></>},
-    {path:"/diet",element:<><Searchfood/></>}
+    {path:"/diet",element:<><Searchfood/></>},
+    {path:"/chat", element:<><Chatbot/></>}
   ])
 
   useEffect(()=>{
