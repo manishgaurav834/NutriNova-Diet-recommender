@@ -33,9 +33,9 @@ def get_response(query, chat_history):
 
     return res
 
-@app.route('/')
-def hello_world():
-    return get_response("tell me about bmi?", "")
+@app.route('/post_question')
+def main():
+    return get_response("tell me about bmi?", "i am good")
 
 if __name__ == '__main__':
     app.run(debug=True)
