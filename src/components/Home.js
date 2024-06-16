@@ -107,11 +107,12 @@ const Home = () => {
         </div>
         <div className="flex w-full items-center justify-start gap-x-8">
         <Link to="diet"><button className="h-16 w-80 text-2xl hover:scale-105 hover:opacity-95 rounded-full  bg-black/50 text-white font-bold border-2 border-white" >See Today's Diet</button></Link>
-        <button className="h-16 w-80 text-2xl hover:scale-105 hover:opacity-95 rounded-full  bg-black/50 text-white font-bold border-2 border-white" >About Us</button>
+        <Link to="/chat"><button className="h-16 w-80 text-2xl hover:scale-105 hover:opacity-95 rounded-full  bg-black/50 text-white font-bold border-2 border-white" >Ask From AI</button></Link>
+       
         </div>
         <div className="flex w-full items-center justify-start gap-x-8">
         <button className="h-16 w-80 text-2xl hover:scale-105 hover:opacity-95 rounded-full  bg-black/50 text-white font-bold border-2 border-white" onClick={()=>{setSD3(true)}} >Check BMI/Goals</button>
-        <Link to="/chat"><button className="h-16 w-80 text-2xl hover:scale-105 hover:opacity-95 rounded-full  bg-black/50 text-white font-bold border-2 border-white" >Ask From AI</button></Link>
+        <button className="h-16 w-80 text-2xl hover:scale-105 hover:opacity-95 rounded-full  bg-black/50 text-white font-bold border-2 border-white" >About Us</button>
         </div>
      
       </div>
