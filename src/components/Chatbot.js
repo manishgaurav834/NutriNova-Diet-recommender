@@ -5,6 +5,8 @@ import { faPaperPlane,faRobot } from '@fortawesome/free-solid-svg-icons'
 import authContext from '../context/authcontext'
 import { useNavigate } from 'react-router-dom'
 
+
+
 const Chatbot = () => {
   const context=useContext(authContext)
   const {success}=context
@@ -49,7 +51,9 @@ const Chatbot = () => {
     <>
       <div className="top-0 absolute w-full h-full bg-bgd bg-cover bg-right-bottom chatbot-container ">
         <Nav3 />
-        <div className="w-[90%]  h-[70%] absolute top-24 mx-auto right-0 left-0 flex flex-col overflow-y-scroll p-3 ">
+        
+        <div className="w-[90%] scrollbar-thin scrollbar-thumb-gray-600 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-track-black/60  h-[70%]  absolute top-24 mx-auto right-0 left-0 flex flex-col overflow-y-auto  p-3 min-h-0 min-w-0 ">
+        
           <div className="flex justify-start  ">
           <div className="min-w-[20%] mb-5 max-w-[40%]  py-3 px-7 border-2  border-gray-500 rounded-xl  bg-black text-white text-xl">
             <FontAwesomeIcon icon={faRobot} className="mx-2" /> Hi! How may I
@@ -74,24 +78,26 @@ const Chatbot = () => {
             );
           })}
           </div>
+          
        
         <div className="bottom-8 absolute w-full flex items-center justify-center">
-          <div className="w-[90%] flex items-center justify-between">
+          <form className="w-[90%] flex items-center justify-between" onSubmit={submit}>
             <textarea
+              style={{resize:"none"}}
               placeholder="Ask Nutri-BOT"
               id="message"
               name="message"
               value={message}
               onChange={handleChange}
-              className=" flex items-center px-10 py-3 w-[93%] bg-black/80 text-white border-2 border-slate-500 rounded-xl"
+              className=" scrollbar-thin scrollbar-thumb-gray-600 scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-track-black/60 flex items-center px-10 py-3 w-[93%] bg-black/80 text-white border-2 border-slate-500 rounded-xl"
             />
-            <button
+            <button type="submit"
               className="bg-black/80 hover:scale-105 h-16 w-20 text-white text-2xl border-white border-2 rounded-2xl"
-              onClick={submit}
+              
             >
               <FontAwesomeIcon icon={faPaperPlane} />{" "}
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </>

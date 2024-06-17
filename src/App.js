@@ -26,9 +26,7 @@ function App() {
     {path:"/chat", element:<><Chatbot/></>}
   ])
 
-  useEffect(()=>{
-    document.title="NutriNova";
-  })
+  
 
   
   return (
