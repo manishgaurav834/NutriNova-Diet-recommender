@@ -15,7 +15,10 @@ const Chatbot = () => {
   const [res,SetRes] = useState(["i am here","its fine"]);
   const [mymess,setMymess] = useState([]);
   const [curr,setCurr] = useState([])
-  const submit=(e)=>{
+
+  const [response, setResponse] = useState(null);
+
+  const submit= async (e)=>{
     e.preventDefault();
     var n=mymess;
     n.push(message);
@@ -26,7 +29,32 @@ const Chatbot = () => {
     setCurr(c);
     console.log(mymess);
 
+    const data = {
+      history: mymess,
+      message: message
+    };
+
+    try {
+      const res = await fetch('http://127.0.0.1:5000', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+      setResponse(result);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+
+
+    
+
   }
+
+
   const handleChange = (e)=>{
     SetMessage(e.target.value)
 
